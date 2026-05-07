@@ -11,10 +11,10 @@ app.post("/api/login", (req, res) => {
 
   const { user, pass } = req.body;
   if (user === "admin" && pass === "1234") {
-    console.log("❌ Credenciales inválidas:", { user, pass });
+    console.log("✅ Login exitoso:", { user });
     return res.json({ ok: true, token: "fake-token-123" });
   }
-  console.log("✅ Login exitoso:", { user });
+  console.log("❌ Credenciales inválidas:", { user, pass });
   return res.status(401).json({ ok: false, message: "Credenciales inválidas" });
 });
 
