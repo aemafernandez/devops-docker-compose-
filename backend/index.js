@@ -30,6 +30,19 @@ app.get("/api/dashboard", (req, res) => {
   });
 });
 
+app.get("/api/images", (req, res) => {
+  console.log("📥 [IMAGES] Solicitud recibida");
+  // Demo: 3 imágenes de paisajes de internet (Unsplash, uso gratuito)
+  res.json({
+    ok: true,
+    images: [
+      { id: 1, url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80", alt: "Paisaje de montaña" },
+      { id: 2, url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80", alt: "Bosque verde" },
+      { id: 3, url: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80", alt: "Playa al atardecer" }
+    ]
+  });
+});
+
 // app.listen(3000, () => console.log("API escuchando en puerto 3000"));
 app.listen(3000, "0.0.0.0", () => {
   console.log("API escuchando en puerto 3000");

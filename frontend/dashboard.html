@@ -9,7 +9,10 @@
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <span class="navbar-brand">Dashboard</span>
-    <button class="btn btn-outline-light btn-sm" onclick="logout()">Salir</button>
+    <div>
+      <button class="btn btn-outline-light btn-sm me-2" onclick="goToGallery()">Ver Galería</button>
+      <button class="btn btn-outline-light btn-sm" onclick="logout()">Salir</button>
+    </div>
   </div>
 </nav>
 
@@ -48,6 +51,10 @@
 function logout() {
   localStorage.removeItem('token');
   window.location.href = '/';
+}
+
+function goToGallery() {
+  window.location.href = '/gallery';
 }
 
 async function loadDashboard() {
